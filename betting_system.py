@@ -967,6 +967,9 @@ for match in matches:
 
     for game in odds_data:
 
+        print("DEBUG GAME:", game)
+        print("DEBUG TYPE:", type(game))
+
         api_home = game["home_team"]
         api_away = game["away_team"]
 
