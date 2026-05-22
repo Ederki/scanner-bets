@@ -202,7 +202,7 @@ kaleido==0.2.1
 kiwisolver==1.4.5
 lazy_loader==0.4
 legacy-cgi==2.6.1
-Levenshtein==0.26.1
+
 lifelines==0.30.0
 lightgbm==4.5.0
 locket==1.0.0
