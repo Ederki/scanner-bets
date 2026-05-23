@@ -1209,3 +1209,18 @@ def run_flask():
     app.run(host="0.0.0.0", port=port)
 
 threading.Thread(target=run_flask).start()
+
+import smtplib
+from email.mime.text import MIMEText
+
+msg = MIMEText("EMAIL TEST OK")
+msg["Subject"] = "TEST RENDER"
+msg["From"] = "clreder18@gmail.com"
+msg["To"] = "clr_eder18@hotmail.com"
+
+server = smtplib.SMTP("smtp.gmail.com", 587)
+server.starttls()
+server.login("clreder18@gmail.com", "ncpramyoqbzxllzt")
+server.send_message(msg)
+
+print("EMAIL ENVIADO")
