@@ -65,7 +65,8 @@ def get_real_odds():
         "apiKey": ODDS_API_KEY,
         "regions": "eu",
         "markets": "h2h,totals,btts",
-        "oddsFormat": "decimal"
+        "oddsFormat": "decimal",
+        "sport": "soccer_epl",
     }
 
     response = requests.get(url, params=params)
