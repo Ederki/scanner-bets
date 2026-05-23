@@ -968,6 +968,29 @@ for match in matches:
 
     for game in odds_data:
 
+        commence_time = game.get("commence_time", "")
+
+        from datetime import datetime, timezone
+
+        try:
+            game_time = datetime.fromisoformat(
+                commence_time.replace("Z", "+00:00")
+            )
+
+            now = datetime.now(timezone.utc)
+
+            # Ignorar partidos ya empezados
+            if game_time <= now:
+                continue
+
+        except:
+            continue
+
+        league = game.get("sport_title", "")
+
+        if "Premier League" not in league:
+            continue        
+
         if not isinstance(game, dict):
             print("IGNORADO:", game)
             continue
