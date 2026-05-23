@@ -1140,6 +1140,38 @@ for match in matches:
 
             print(">>> VALUE BET DETECTED <<<")
 
+            import smtplib
+            from email.mime.text import MIMEText
+
+            body = f"""
+            VALUE BET DETECTED
+
+            {home_team} vs {away_team}
+
+            MARKET: {market['name']}
+            EV: {round(market['ev'], 4)}
+            ODDS: {round(market['market_odds'], 2)}
+            """
+
+            msg = MIMEText(body)
+
+            msg["Subject"] = f"VALUE BET: {home_team} vs {away_team}"
+            msg["From"] = "clreder18@gmail.com"
+            msg["To"] = "clr_eder18@hotmail.com"
+
+            server = smtplib.SMTP("smtp.gmail.com", 587)
+            server.starttls()
+
+            server.login(
+                "clreder18@gmail.com",
+                "ncpramyoqbzxllzt"
+            )
+
+            server.send_message(msg)
+            server.quit()
+
+            print("EMAIL PICK ENVIADA")
+
             alert = f"""
 
                 VALUE BET DETECTED
