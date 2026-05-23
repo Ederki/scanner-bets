@@ -1120,7 +1120,18 @@ for match in matches:
 
         print("Kelly:", round(market["kelly"] * 100, 2), "%")
 
-        if market["ev"] > 0.03:
+        if (
+            market["ev"] > 0.05
+        ):
+
+            if market["market_odds"] < 1.60:
+                continue
+
+            if market["market_odds"] > 3.50:
+                continue
+
+            if market["kelly"] < 0.03:
+                continue 
 
             all_value_bets.append({
                 "match": f"{home_team} vs {away_team}",
