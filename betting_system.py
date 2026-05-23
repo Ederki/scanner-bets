@@ -1122,6 +1122,7 @@ for match in matches:
 
         if (
             market["ev"] > 0.05
+            and market["probability"] > 0.55
         ):
 
             if market["market_odds"] < 1.60:
