@@ -338,7 +338,7 @@ def get_bet365_odds():
         "apiKey": ODDS_API_KEY,
         "regions": "eu",
         "markets": "h2h,totals",
-        "bookmakers": "pinnacle",
+        "bookmakers": "bet365",
         "oddsFormat": "decimal"
     }
 
