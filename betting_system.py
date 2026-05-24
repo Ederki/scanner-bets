@@ -965,6 +965,10 @@ for match in matches:
     market_odds = 0
 
     odds_data = get_bet365_odds()
+ 
+    if not isinstance(odds_data, list):
+        print("ERROR API:", odds_data)
+        odds_data = []
 
     for game in odds_data:
 
