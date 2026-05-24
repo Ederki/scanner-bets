@@ -1145,7 +1145,7 @@ for match in matches:
         print("Kelly:", round(market["kelly"] * 100, 2), "%")
 
         if (
-            market["ev"] > 0.05
+            market["ev"] > 0.03
             and market["probability"] > 0.55
         ):
 
@@ -1155,7 +1155,7 @@ for match in matches:
             if market["market_odds"] > 3.50:
                 continue
 
-            if market["kelly"] < 0.03:
+            if market["kelly"] < 0.01:
                 continue 
 
             all_value_bets.append({
